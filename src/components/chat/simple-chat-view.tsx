@@ -53,8 +53,12 @@ export function SimplifiedChatView({
   // Only display the first tool (if any)
   const currentTool = toolInvocations.length > 0 ? [toolInvocations[0]] : [];
 
+  // Check if we have meaningful text content (more than just confirmations)
   const hasTextContent = message.content.trim().length > 0;
   const hasTools = currentTool.length > 0;
+  
+  // If we have tools, minimize text content to avoid redundancy
+  const showTextContent = hasTextContent && (!hasTools || message.content.trim().length > 50);
 
   console.log('currentTool', currentTool);
 
@@ -72,8 +76,8 @@ export function SimplifiedChatView({
           </div>
         )}
 
-        {/* Text content */}
-        {hasTextContent && (
+        {/* Text content - only show if meaningful and not redundant with tools */}
+        {showTextContent && (
           <div className="w-full">
             <ChatBubble variant="received" className="w-full">
               <ChatBubbleMessage className="w-full">

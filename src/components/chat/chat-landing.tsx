@@ -82,7 +82,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
             I'm Anuj's digital twin
         </h2>
         <p className="text-muted-foreground mx-auto max-w-md">
-          The first portfolio that fit YOU needs.
+          Begin your interview with my digital twin.
         </p>
       </motion.div>
 

@@ -28,7 +28,7 @@ Connecting the physical and digital worlds through technology
 
 🚀 **Continuous Learning**
 Always exploring new technologies and pushing boundaries`,
-    tool: "getPresentation"
+    tool: null
   },
 
   "How did you get started in tech?": {
@@ -48,7 +48,7 @@ Smart India Hackathon 2025 gave me confidence and recognition
 
 💼 **Professional Growth**
 MookMati internship and Fiverr projects provided real-world experience`,
-    tool: "getPresentation"
+    tool: null
   },
 
   "Where do you see yourself in 5 years?": {
@@ -68,7 +68,7 @@ Possibly founding my own AI-focused startup solving real-world problems
 
 📚 **Continuous Growth**
 Advanced degrees or certifications in AI/ML, staying at the forefront of technology`,
-    tool: "getPresentation"
+    tool: null
   },
 
   // Projects section
@@ -209,14 +209,12 @@ Data preprocessing, Feature engineering, Model deployment`,
 
 🔧 **Technical Growth**
 Freelancing pushed me to learn new technologies quickly and deliver production-ready solutions!`,
-    tool: "getSkills"
+    tool: null
   },
 
   // Professional section
   "Can I see your resume?": {
-    reply: `📄 **Download Resume Here**: https://anujjainbatu.github.io/anujjainbatu/Anuj_Jain_Resume.pdf
-
-Here's my professional summary:
+    reply: `Here's my professional summary:
 
 🎓 **Education**
 B.Tech in IoT, SATI (2022-2026) - 8.34 GPA
@@ -258,7 +256,7 @@ Full-stack capabilities from IoT hardware to AI/ML to web development
 
 ✨ **Innovation Focus**
 Always looking for creative solutions and improvements`,
-    tool: "getPresentation"
+    tool: null
   },
 
   "Where are you working now?": {
@@ -372,7 +370,7 @@ Roles where I can work with experienced mentors and cutting-edge technologies`,
   },
 
   "Where are you located?": {
-    reply: `📍 **Current Location**: Batu, Madhya Pradesh, India
+    reply: `📍 **Current Location**: Vidisha, Madhya Pradesh, India
 
 🌍 **Mobility**
 • Open to relocation within India

@@ -16,6 +16,7 @@ import {
   ChevronUp,
   CircleEllipsis,
   CodeIcon,
+  FileText,
   GraduationCapIcon,
   Laugh,
   Layers,
@@ -40,6 +41,7 @@ const questions = {
   Me: 'Who are you? I want to know more about you.',
   Projects: 'What are your projects? What are you working on right now?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
+  Resume: 'Can I see your resume?',
   Contact:
     'How can I reach you? What kind of project would make you say "yes" immediately?',
 };
@@ -48,6 +50,7 @@ const questionConfig = [
   { key: 'Me', color: '#329696', icon: Laugh },
   { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
   { key: 'Skills', color: '#856ED9', icon: Layers },
+  { key: 'Resume', color: '#D97856', icon: FileText },
   { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
 ];
 
@@ -100,6 +103,14 @@ const questionsByCategory = [
     ],
   },
   {
+    id: 'resume',
+    name: 'Resume',
+    icon: FileText,
+    questions: [
+      'Can I see your resume?',
+    ],
+  },
+  {
     id: 'contact',
     name: 'Contact & Future',
     icon: MailIcon,
@@ -148,6 +159,7 @@ export default function HelperBoost({
       'Me': 'Who are you?',
       'Projects': 'What are your projects? What are you working on right now?',
       'Skills': 'What are your skills? Give me a list of your soft and hard skills.',
+      'Resume': 'Can I see your resume?',
       'Contact': 'How can I reach you? What kind of project would make you say "yes" immediately?'
     };
     

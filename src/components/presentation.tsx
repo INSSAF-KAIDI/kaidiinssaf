@@ -13,7 +13,7 @@ export function Presentation() {
     // Add a newline character after the emoji
     description:
       "Hey 👋\nI'm Anuj, a passionate Full-stack Python developer and AI engineer. I'm currently pursuing B.Tech in IoT at SATI and working as a freelance developer. I love building end-to-end smart systems — from IoT devices to LLM-powered applications. I'm a 2025 Smart India Hackathon finalist and enjoy solving real-world problems with technology.",
-    src: '/avatar.png',
+    src: '/profile.jpeg',
     fallbackSrc:
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
   };
@@ -103,7 +103,7 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-            {['AI', 'Developer', '42 Paris', 'Sport', 'SaaS Builder'].map(
+            {['AI Engineer', 'Python Developer', 'IoT Specialist', 'ML Engineer', 'Freelancer'].map(
               (tag) => (
                 <span
                   key={tag}

@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDownToLine, Download, Eye, File } from 'lucide-react';
+import { ArrowDownToLine, Download, Eye, File, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 export function Resume() {
@@ -14,30 +14,24 @@ export function Resume() {
     lastUpdated: 'March 2025',
     fileSize: '0.5 MB',
     previewImageSrc: '/anuj_resume_preview.png', // You'll need to add this image
-    downloadUrl: '/anuj_resume.pdf', // You'll need to add this PDF
+    downloadUrl: 'https://anujjainbatu.github.io/anujjainbatu/Anuj_Jain_Resume.pdf',
   };
 
   const handleDownload = () => {
-    // Create a link element
-    const link = document.createElement('a');
-    link.href = resumeDetails.downloadUrl;
-    link.download = resumeDetails.downloadUrl.split('/').pop() || 'resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // For external URLs, open in a new tab
+    window.open(resumeDetails.downloadUrl, '_blank');
   };
 
   return (
     <div className="mx-auto w-full py-8 font-sans">
+      {/* Resume Card */}
       <motion.div
-        onClick={handleDownload}
-        className="group relative cursor-pointer overflow-hidden rounded-xl bg-accent p-0 transition-all duration-300"
+        className="group relative overflow-hidden rounded-xl bg-accent p-0 transition-all duration-300 mb-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.0, ease: 'easeOut' }}
-        whileHover={{ scale: 1.01 }}
       >
-        {/* Details area (bottom part) */}
+        {/* Details area */}
         <div className="p-5">
           <div className="flex items-center justify-between">
             <div>
@@ -56,14 +50,49 @@ export function Resume() {
               </div>
             </div>
 
-            {/* Download indicator */}
-            <motion.div
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-primary-foreground group-hover:bg-black/80"
-              initial={{ scale: 1 }}
+            {/* Download button */}
+            <motion.button
+              onClick={handleDownload}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white hover:bg-black/80 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              title="Download PDF"
             >
               <Download className="h-5 w-5" />
-            </motion.div>
+            </motion.button>
           </div>
+        </div>
+      </motion.div>
+
+      {/* PDF Preview - Always Visible */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+        className="w-full rounded-xl overflow-hidden border bg-white shadow-lg"
+      >
+        <div className="bg-gray-100 px-4 py-2 flex items-center justify-between border-b">
+          <div className="flex items-center gap-2">
+            <File className="h-4 w-4 text-gray-600" />
+            <span className="text-sm font-medium text-gray-700">Resume Preview</span>
+          </div>
+          <button
+            onClick={handleDownload}
+            className="flex items-center gap-1 px-3 py-1 text-xs bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+          >
+            <ExternalLink className="h-3 w-3" />
+            Open Full
+          </button>
+        </div>
+        
+        <div className="w-full h-[600px] bg-gray-50">
+          <iframe
+            src={resumeDetails.downloadUrl}
+            width="100%"
+            height="100%"
+            className="border-0"
+            title="Resume Preview"
+          />
         </div>
       </motion.div>
     </div>

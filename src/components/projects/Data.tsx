@@ -33,15 +33,15 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'Smart Chessboard Hardware',
       },
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'React Dashboard',
       },
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'PCB Design',
       },
     ],
@@ -73,15 +73,15 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'hideFlare Dashboard',
       },
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'Detection System',
       },
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'Analysis Results',
       },
     ],
@@ -109,11 +109,11 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'Book Classification Interface',
       },
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'ML Model Results',
       },
     ],
@@ -145,11 +145,11 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'Automation Dashboard',
       },
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'Bot Interface',
       },
     ],
@@ -180,11 +180,11 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'Portfolio Homepage',
       },
       {
-        src: '/avatar.png',
+        src: '/placeholder.jpg',
         alt: 'Project Section',
       },
     ],
@@ -284,31 +284,31 @@ export const data = [
   {
     category: 'IoT System',
     title: 'Low-Cost Smart Chessboard with Cloud Integration',
-    src: '/avatar.png',
+    src: '/placeholder.jpg',
     content: <ProjectContent project={{ title: 'Low-Cost Smart Chessboard with Cloud Integration' }} />,
   },
   {
     category: 'Cybersecurity Tool',
     title: 'hideFlare: CDN Obfuscation Detection System',
-    src: '/avatar.png',
+    src: '/placeholder.jpg',
     content: <ProjectContent project={{ title: 'hideFlare: CDN Obfuscation Detection System' }} />,
   },
   {
     category: 'Machine Learning',
     title: 'Book Genre Classification System',
-    src: '/avatar.png',
+    src: '/placeholder.jpg',
     content: <ProjectContent project={{ title: 'Book Genre Classification System' }} />,
   },
   {
     category: 'Automation',
     title: 'Python Automation Suite',
-    src: '/avatar.png',
+    src: '/placeholder.jpg',
     content: <ProjectContent project={{ title: 'Python Automation Suite' }} />,
   },
   {
     category: 'Web Development',
     title: 'AI Portfolio Website',
-    src: '/avatar.png',
+    src: '/placeholder.jpg',
     content: <ProjectContent project={{ title: 'AI Portfolio Website' }} />,
   },
 ];
