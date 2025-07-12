@@ -107,18 +107,18 @@ const Skills = () => {
       initial={{ scale: 0.98, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
-      className="mx-auto w-full max-w-5xl rounded-4xl"
+      className="mx-auto w-full max-w-5xl rounded-4xl px-4 sm:px-6"
     >
-      <Card className="w-full border-none px-0 pb-12 shadow-none">
+      <Card className="w-full border-none px-0 pb-8 sm:pb-12 shadow-none">
         <CardHeader className="px-0 pb-1">
-          <CardTitle className="text-primary px-0 text-4xl font-bold">
+          <CardTitle className="text-primary px-0 text-2xl sm:text-3xl lg:text-4xl font-bold">
             Skills & Expertise
           </CardTitle>
         </CardHeader>
 
         <CardContent className="px-0">
           <motion.div
-            className="space-y-8 px-0"
+            className="space-y-6 sm:space-y-8 px-0"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -131,13 +131,13 @@ const Skills = () => {
               >
                 <div className="flex items-center gap-2">
                   {section.icon}
-                  <h3 className="text-accent-foreground text-lg font-semibold">
+                  <h3 className="text-accent-foreground text-base sm:text-lg font-semibold">
                     {section.category}
                   </h3>
                 </div>
 
                 <motion.div
-                  className="flex flex-wrap gap-2"
+                  className="flex flex-wrap gap-1.5 sm:gap-2"
                   variants={containerVariants}
                   initial="hidden"
                   animate="visible"
@@ -151,7 +151,7 @@ const Skills = () => {
                         transition: { duration: 0.2 },
                       }}
                     >
-                      <Badge className={`border px-3 py-1.5 font-normal`}>
+                      <Badge className={`border px-2 py-1 sm:px-3 sm:py-1.5 font-normal text-xs sm:text-sm`}>
                         {skill}
                       </Badge>
                     </motion.div>
