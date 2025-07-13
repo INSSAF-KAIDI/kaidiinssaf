@@ -221,68 +221,12 @@ The AI chatbot is configured through your JSON file:
 }
 ```
 
-## � Deployment Options
-
-### Vercel (Recommended)
-1. Push code to GitHub
-2. Connect to [Vercel](https://vercel.com)
-3. Deploy automatically on push
-
-### Netlify
-1. Build the project: `npm run build`
-2. Upload `out/` folder to [Netlify](https://netlify.com)
-
-### Docker
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "start"]
-```
-
-## �️ Customization Options
-
-### 1. Styling (No Code Required)
-- Colors and themes are automatic based on Tailwind CSS
-- Dark/light mode works out of the box
-- Responsive design included
-
-### 2. Adding New Sections
-Add to your JSON configuration:
-```json
-{
-  "customSections": {
-    "hobbies": ["Photography", "Travel", "Music"],
-    "certifications": ["AWS Certified", "Google Cloud"]
-  }
-}
-```
-
-### 3. Social Links
-```json
-{
-  "social": {
-    "linkedin": "https://linkedin.com/in/yourname",
-    "github": "https://github.com/yourname",
-    "twitter": "https://twitter.com/yourname"
-  }
-}
-```
-
 ## 🔧 Environment Variables
 
 Create `.env.local` file:
 ```env
 # Required for AI chat functionality
 GOOGLE_GENERATIVE_AI_API_KEY=your_google_ai_api_key
-
-# Optional: Analytics
-NEXT_PUBLIC_GA_ID=your_google_analytics_id
-```
 
 ## 🧪 Testing Your Configuration
 
@@ -296,26 +240,6 @@ npm run type-check
 
 # Test build
 npm run build
-```
-
-## � SEO & Performance
-
-### Built-in Features:
-- ✅ Meta tags automatically generated
-- ✅ OpenGraph images
-- ✅ Structured data (JSON-LD)
-- ✅ Optimized Core Web Vitals
-- ✅ Image optimization
-
-### Customize SEO:
-```json
-{
-  "seo": {
-    "title": "Your Name - Full Stack Developer",
-    "description": "Professional portfolio of Your Name...",
-    "keywords": ["React", "Node.js", "Full Stack Developer"]
-  }
-}
 ```
 
 ## 🤝 Contributing
@@ -347,10 +271,8 @@ A: Run `npm run type-check` to validate your JSON configuration
 A: Most customization can be done through JSON. For advanced features, modify the components.
 
 ### Get Help:
-- 📖 Check the [Wiki](link-to-wiki)
-- 🐛 [Open an Issue](link-to-issues)
-- 💬 Ask questions in [Discussions](link-to-discussions)
-- 📧 Email: your-support-email
+- 🐛 [Open an Issue](https://github.com/anujjainbatu/portfolio/issues)
+- 📧 Email: anujjainbatu@gmail.com
 
 ## 🌟 Showcase
 
