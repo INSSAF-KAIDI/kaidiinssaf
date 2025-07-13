@@ -227,6 +227,7 @@ Create `.env.local` file:
 ```env
 # Required for AI chat functionality
 GOOGLE_GENERATIVE_AI_API_KEY=your_google_ai_api_key
+```
 
 ## 🧪 Testing Your Configuration
 
