@@ -2,7 +2,9 @@
 
 A **revolutionary portfolio system** that allows complete customization through a single JSON file. Perfect for developers who want a professional AI-powered portfolio without touching any code.
 
-[![Demo](https://img.shields.io/badge/Demo-Live%20Site-brightgreen)](your-demo-url)
+![Portfolio Preview](assets/portfolio.png)
+
+[![Demo](https://img.shields.io/badge/Demo-Live%20Site-brightgreen)](https://portfolio.anujjainbatu.tech/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)](https://www.typescriptlang.org/)
 
@@ -253,7 +255,7 @@ npm run build
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## 🆘 Support
 
