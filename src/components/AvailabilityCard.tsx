@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CalendarDays, Code2, Globe } from 'lucide-react';
+import { CalendarDays, Code2, Globe, Briefcase } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-interface InternshipData {
+interface AvailabilityData {
   availability: string;
   preferences: {
     roleTypes: string[];
@@ -37,11 +37,11 @@ interface InternshipData {
   };
 }
 
-interface InternshipCardProps {
-  data?: InternshipData;
+interface AvailabilityCardProps {
+  data?: AvailabilityData;
 }
 
-const InternshipCard = ({ data }: InternshipCardProps) => {
+const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
   const openMail = () => {
     window.open(`mailto:${data?.contact.email || 'anujjainbatu@gmail.com'}`, '_blank');
   };
@@ -60,7 +60,7 @@ const InternshipCard = ({ data }: InternshipCardProps) => {
           {/* Avatar placeholder */}
           <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
             <img
-              src="/avatar.png"
+              src="/profile.jpeg"
               alt="Anuj's avatar"
               className="h-full w-full object-cover object-[center_top_-5%] scale-95"
             />
@@ -70,20 +70,47 @@ const InternshipCard = ({ data }: InternshipCardProps) => {
               Anuj Jain
             </h2>
             <p className="text-muted-foreground text-sm">
-              Job Application
+              Available for Opportunities
             </p>
           </div>
         </div>
 
-        {/* Live badge */}
-        <div className="mt-4 flex items-center gap-2 sm:mt-0">
+        {/* Enhanced Live badge with availability status */}
+        <div className="mt-4 flex flex-col items-center gap-2 sm:mt-0 sm:items-end">
           <span className="flex items-center gap-1 rounded-full border border-green-500 px-3 py-0.5 text-sm font-medium text-green-500">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
             </span>
-            Live
+            Available Now
           </span>
+          <p className="text-xs text-muted-foreground text-center sm:text-right">
+            Open to full-time & internship roles
+          </p>
+        </div>
+      </div>
+
+      {/* Availability Highlight Section */}
+      <div className="mb-8 rounded-2xl bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 p-6 border border-green-200 dark:border-green-800">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center">
+            <Briefcase className="h-4 w-4 text-white" />
+          </div>
+          <h3 className="text-lg font-semibold text-foreground">Current Availability Status</h3>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <p className="text-sm font-medium text-foreground mb-1">Status</p>
+            <p className="text-sm text-green-600 dark:text-green-400 font-semibold">
+              {data?.availability || "✅ Available for immediate start"}
+            </p>
+          </div>
+          <div>
+            <p className="text-sm font-medium text-foreground mb-1">Looking for</p>
+            <p className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
+              Full-time roles, Internships & Contract work
+            </p>
+          </div>
         </div>
       </div>
 
@@ -184,4 +211,4 @@ const InternshipCard = ({ data }: InternshipCardProps) => {
   );
 };
 
-export default InternshipCard;
+export default AvailabilityCard;

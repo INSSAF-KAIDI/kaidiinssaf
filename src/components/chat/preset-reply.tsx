@@ -12,7 +12,7 @@ import AllProjects from '@/components/projects/AllProjects';
 import Skills from '@/components/skills';
 import { Contact } from '@/components/contact';
 import Resume from '@/components/resume';
-import InternshipCard from '@/components/InternshipCard';
+import AvailabilityCard from '@/components/AvailabilityCard';
 
 interface PresetReplyProps {
   question: string;
@@ -65,6 +65,13 @@ export function PresetReply({ question, reply, tool, onGetAIResponse, onClose }:
         return (
           <div className="w-full rounded-lg mb-4">
             <Resume />
+          </div>
+        );
+      
+      case 'getInternship':
+        return (
+          <div className="w-full rounded-lg mb-4">
+            <AvailabilityCard />
           </div>
         );
       

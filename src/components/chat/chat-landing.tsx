@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Code, GraduationCap, Mail, MessageSquare } from 'lucide-react';
+import { Award, Code, GraduationCap, Mail, MessageSquare, Briefcase } from 'lucide-react';
 import React from 'react';
 
 import { presetReplies } from '@/lib/config-loader';
@@ -26,6 +26,10 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
     {
       icon: <Award className="h-4 w-4" />,
       text: 'What are your skills?',
+    },
+    {
+      icon: <Briefcase className="h-4 w-4" />,
+      text: 'Am I available for opportunities?',
     },
     {
       icon: <Mail className="h-4 w-4" />,
@@ -84,6 +88,22 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
         <p className="text-muted-foreground mx-auto max-w-md">
           Begin your interview with my digital twin.
         </p>
+      </motion.div>
+
+      {/* Available for Opportunities Button */}
+      <motion.div className="mb-8" variants={itemVariants}>
+        <motion.button
+          onClick={() => handleQuestionClick('Am I available for opportunities?')}
+          className="bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-200 shadow-sm hover:shadow-md flex items-center gap-2 mx-auto"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+          </span>
+          Available for Opportunities
+        </motion.button>
       </motion.div>
 
       {/* Suggested questions */}
