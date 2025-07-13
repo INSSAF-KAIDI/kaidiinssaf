@@ -112,8 +112,24 @@ const Chat = () => {
       console.error('Chat error:', error.message, error.cause);
       
       // Handle specific error types
-      if (error.message?.includes('quota') || error.message?.includes('exceeded')) {
-        toast.error('API quota exceeded. Please try again later or contact Anuj for a demo.');
+      if (error.message?.includes('quota') || error.message?.includes('exceeded') || error.message?.includes('429')) {
+        // Show a more prominent error message for quota issues
+        toast.error('🚫 API Quota Exhausted! I\'m using the free version of Gemini API. Please come back after 24 hours or contact Anuj directly for a live demo. Thank you for your patience! 🙏', {
+          duration: 8000, // Show for 8 seconds
+          style: {
+            background: '#fee2e2',
+            border: '1px solid #fca5a5',
+            color: '#dc2626',
+            fontSize: '14px',
+            fontWeight: '500',
+          },
+        });
+        
+        // Also add a chat bubble with the error message
+        append({
+          role: 'assistant',
+          content: '🚫 **API Quota Exhausted**\n\nHi! I\'m currently using the free version of Google\'s Gemini API, and the daily quota has been reached. \n\n**What you can do:**\n• Come back after 24 hours when the quota resets\n• Contact Anuj directly for a live demo\n• Explore the preset questions below for instant responses\n\nThank you for your patience! 🙏',
+        });
       } else if (error.message?.includes('network')) {
         toast.error('Network error. Please check your connection and try again.');
       } else {
@@ -171,6 +187,15 @@ const Chat = () => {
   //@ts-ignore
   const submitQuery = (query) => {
     if (!query.trim() || isToolInProgress) return;
+    
+    // Check if this is a preset question first
+    if (presetReplies[query]) {
+      const preset = presetReplies[query];
+      setPresetReply({ question: query, reply: preset.reply, tool: preset.tool });
+      setLoadingSubmit(false);
+      return;
+    }
+    
     setLoadingSubmit(true);
     setPresetReply(null); // Clear any preset reply when submitting new query
     append({

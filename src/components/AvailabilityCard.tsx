@@ -42,10 +42,12 @@ interface AvailabilityCardProps {
 }
 
 const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
-  const openMail = () => {
-    window.open(`mailto:${data?.contact.email || 'anujjainbatu@gmail.com'}`, '_blank');
-  };
   const router = useRouter();
+
+  const handleContactClick = () => {
+    // Navigate to home page with the contact preset question
+    router.push('/?query=How can I reach you?');
+  };
 
   return (
     <motion.div
@@ -201,7 +203,7 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
       {/* Contact button */}
       <div className="mt-10 flex justify-center">
         <button
-          onClick={openMail}
+          onClick={handleContactClick}
           className="cursor-pointer rounded-full bg-black px-6 py-3 font-semibold text-white transition-colors duration-300 hover:bg-zinc-800"
         >
           Contact me
