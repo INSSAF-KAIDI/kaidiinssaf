@@ -3,75 +3,58 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
-import { Code, Cpu, PenTool, Users } from 'lucide-react';
+import { Code, Cpu, PenTool, Users, Database, Cloud, Microchip, Brain } from 'lucide-react';
+import { getConfig } from '@/lib/config-loader';
 
 const Skills = () => {
+  // Get skills from configuration
+  const config = getConfig();
+  
+  // Transform skills data with icons
   const skillsData = [
     {
       category: 'Programming Languages',
       icon: <Code className="h-5 w-5" />,
-      skills: [
-        'Python',
-        'SQL',
-        'JavaScript',
-        'HTML/CSS',
-        'TypeScript',
-      ],
+      skills: config.skills.programming,
       color: 'bg-blue-50 text-blue-600 border border-blue-200',
     },
     {
-      category: 'Machine Learning & AI',
-      icon: <Cpu className="h-5 w-5" />,
-      skills: [
-        'Scikit-learn',
-        'XGBoost',
-        'TensorFlow',
-        'OpenCV',
-        'Pandas',
-        'NumPy',
-        'OpenAI API',
-        'LangChain',
-        'LangGraph',
-        'LLM Agents',
-      ],
-      color: 'bg-emerald-50 text-emerald-600 border border-emerald-200',
+      category: 'ML/AI Technologies',
+      icon: <Brain className="h-5 w-5" />,
+      skills: config.skills.ml_ai,
+      color: 'bg-purple-50 text-purple-600 border border-purple-200',
     },
     {
-      category: 'Web Development & APIs',
-      icon: <PenTool className="h-5 w-5" />,
-      skills: ['FastAPI', 'Flask', 'Django', 'REST APIs', 'React.js', 'Firebase SDK'],
-      color: 'bg-indigo-50 text-indigo-600 border border-indigo-200',
+      category: 'Web Development',
+      icon: <Cpu className="h-5 w-5" />,
+      skills: config.skills.web_development,
+      color: 'bg-green-50 text-green-600 border border-green-200',
+    },
+    {
+      category: 'Databases',
+      icon: <Database className="h-5 w-5" />,
+      skills: config.skills.databases,
+      color: 'bg-orange-50 text-orange-600 border border-orange-200',
     },
     {
       category: 'DevOps & Cloud',
-      icon: <Users className="h-5 w-5" />,
-      skills: [
-        'Docker',
-        'Git',
-        'GitHub Actions',
-        'CI/CD',
-        'Postman',
-        'AWS (EC2/S3)',
-        'Firebase',
-        'Heroku',
-      ],
-      color: 'bg-amber-50 text-amber-600 border border-amber-200',
+      icon: <Cloud className="h-5 w-5" />,
+      skills: config.skills.devops_cloud,
+      color: 'bg-emerald-50 text-emerald-600 border border-emerald-200',
+    },
+    {
+      category: 'IoT & Hardware',
+      icon: <Microchip className="h-5 w-5" />,
+      skills: config.skills.iot_hardware,
+      color: 'bg-indigo-50 text-indigo-600 border border-indigo-200',
     },
     {
       category: 'Soft Skills',
       icon: <Users className="h-5 w-5" />,
-      skills: [
-        'Communication',
-        'Problem-Solving',
-        'Team Leadership',
-        'Project Management',
-        'Adaptability',
-        'Learning Agility',
-        'Innovation',
-      ],
-      color: 'bg-purple-50 text-purple-600 border border-purple-200',
+      skills: config.skills.soft_skills,
+      color: 'bg-amber-50 text-amber-600 border border-amber-200',
     },
-  ];
+  ].filter(category => category.skills && category.skills.length > 0);
 
   // Animation variants
   const containerVariants = {
@@ -89,7 +72,7 @@ const Skills = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: [0.19, 1, 0.22, 1] },
+      transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
 

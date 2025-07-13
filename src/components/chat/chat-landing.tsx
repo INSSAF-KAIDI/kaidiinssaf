@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Award, Code, GraduationCap, Mail, MessageSquare } from 'lucide-react';
 import React from 'react';
 
-import { presetReplies } from '@/lib/preset-replies';
+import { presetReplies } from '@/lib/config-loader';
 
 interface ChatLandingProps {
   submitQuery: (query: string) => void;

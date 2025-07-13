@@ -29,7 +29,7 @@ import {
 import { useState } from 'react';
 import { Drawer } from 'vaul';
 import { PresetReply } from '@/components/chat/preset-reply';
-import { presetReplies } from '@/lib/preset-replies';
+import { presetReplies } from '@/lib/config-loader';
 
 interface HelperBoostProps {
   submitQuery?: (query: string) => void;
@@ -103,14 +103,6 @@ const questionsByCategory = [
     ],
   },
   {
-    id: 'resume',
-    name: 'Resume',
-    icon: FileText,
-    questions: [
-      'Can I see your resume?',
-    ],
-  },
-  {
     id: 'contact',
     name: 'Contact & Future',
     icon: MailIcon,
@@ -154,18 +146,18 @@ export default function HelperBoost({
   const handleQuestionClick = (questionKey: string) => {
     const question = questions[questionKey as keyof typeof questions];
     
-    // Map question keys to preset replies that match our preset-replies.ts exactly
+    // Map question keys to preset replies that match our config exactly
     const presetMapping: { [key: string]: string } = {
       'Me': 'Who are you?',
-      'Projects': 'What are your projects? What are you working on right now?',
-      'Skills': 'What are your skills? Give me a list of your soft and hard skills.',
+      'Projects': 'What projects are you most proud of?',
+      'Skills': 'What are your skills?',
       'Resume': 'Can I see your resume?',
-      'Contact': 'How can I reach you? What kind of project would make you say "yes" immediately?'
+      'Contact': 'How can I reach you?'
     };
     
     const presetKey = presetMapping[questionKey];
-    if (presetKey && presetReplies[presetKey as keyof typeof presetReplies] && handlePresetReply) {
-      const preset = presetReplies[presetKey as keyof typeof presetReplies];
+    if (presetKey && presetReplies[presetKey] && handlePresetReply) {
+      const preset = presetReplies[presetKey];
       handlePresetReply(presetKey, preset.reply, preset.tool);
     } else if (submitQuery) {
       submitQuery(question);
@@ -173,25 +165,9 @@ export default function HelperBoost({
   };
 
   const handleDrawerQuestionClick = (question: string) => {
-    // Check if we have an exact match or close match for this question
-    const exactMatch = Object.keys(presetReplies).find(key => key === question);
-    
-    if (exactMatch && handlePresetReply) {
-      const preset = presetReplies[exactMatch as keyof typeof presetReplies];
-      handlePresetReply(exactMatch, preset.reply, preset.tool);
-    } else {
-      // Try to find a close match
-      const closeMatch = Object.keys(presetReplies).find(key => 
-        question.toLowerCase().includes(key.toLowerCase()) ||
-        key.toLowerCase().includes(question.toLowerCase())
-      );
-      
-      if (closeMatch && handlePresetReply) {
-        const preset = presetReplies[closeMatch as keyof typeof presetReplies];
-        handlePresetReply(closeMatch, preset.reply, preset.tool);
-      } else if (submitQuery) {
-        submitQuery(question);
-      }
+    // For drawer questions, always use AI response (no presets)
+    if (submitQuery) {
+      submitQuery(question);
     }
     setOpen(false);
   };

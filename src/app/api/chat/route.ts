@@ -67,7 +67,12 @@ export async function POST(req: Request) {
     });
 
     console.log('[CHAT-API] streamText completed successfully');
-    return result.toDataStreamResponse();
+    console.log('[CHAT-API] Result object keys:', Object.keys(result));
+    
+    const response = result.toDataStreamResponse();
+    console.log('[CHAT-API] DataStreamResponse created');
+    
+    return response;
   } catch (error) {
     console.error('Chat API error:', error);
     console.error('Error details:', error instanceof Error ? error.message : 'Unknown error');

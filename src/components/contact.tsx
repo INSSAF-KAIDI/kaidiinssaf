@@ -3,36 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { contactInfo } from '@/lib/config-loader';
 
 export function Contact() {
-  // Contact information
-  const contactInfo = {
-    name: 'Anuj Jain',
-    email: 'anujjainbatu@gmail.com',
-    handle: '@anujjainbatu',
-    socials: [
-      {
-        name: 'LinkedIn',
-        url: 'https://linkedin.com/in/anujjainbatu',
-      },
-      {
-        name: 'GitHub',
-        url: 'https://github.com/anujjainbatu',
-      },
-      {
-        name: 'Twitter',
-        url: 'https://x.com/anujainbatu',
-      },
-      {
-        name: 'Kaggle',
-        url: 'https://www.kaggle.com/anujjainbatu',
-      },
-      {
-        name: 'LeetCode',
-        url: 'https://leetcode.com/u/anujjainbatu/',
-      },
-    ],
-  };
+  // Contact information now loaded from configuration
 
   // Function to handle opening links
   const openLink = (url: string) => {

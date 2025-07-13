@@ -1,0 +1,310 @@
+{
+  "personal": {
+    "name": "Anuj Jain",
+    "age": 22,
+    "location": "Vidisha, Madhya Pradesh, India",
+    "title": "Full-stack Python Developer & AI Engineer",
+    "email": "anujjainbatu@gmail.com",
+    "handle": "@anujjainbatu",
+    "bio": "Hey 👋\nI'm Anuj, a passionate Full-stack Python developer and AI engineer. I'm currently pursuing B.Tech in IoT at SATI and working as a freelance developer. I love building end-to-end smart systems — from IoT devices to LLM-powered applications. I'm a 2025 Smart India Hackathon finalist and enjoy solving real-world problems with technology.",
+    "avatar": "/profile.jpeg",
+    "fallbackAvatar": "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+
+  "education": {
+    "current": {
+      "degree": "B.Tech in Internet of Things",
+      "institution": "SATI",
+      "duration": "2022-2026",
+      "cgpa": "8.34/10.0",
+      "graduationDate": "June 2026"
+    },
+    "achievements": [
+      "2025 Smart India Hackathon Finalist (2nd among 88,221 teams)",
+      "HDFC Badhte Kadam Scholarship recipient"
+    ]
+  },
+
+  "experience": [
+    {
+      "company": "MookMati",
+      "position": "ML Intern",
+      "type": "Internship",
+      "duration": "July 2024",
+      "description": "AI-Powered Book Startup - Worked on machine learning models and AI systems",
+      "technologies": ["Python", "Machine Learning", "AI"]
+    },
+    {
+      "company": "Fiverr",
+      "position": "Freelance Python & AI Developer",
+      "type": "Freelance",
+      "duration": "2023-Present",
+      "description": "Delivered 25+ Python automation projects including web scraping, API bots, and data pipelines for global clients",
+      "technologies": ["Python", "LangChain", "LangGraph", "OpenAI API", "Web Scraping", "Automation"]
+    }
+  ],
+
+  "skills": {
+    "programming": ["Python", "JavaScript", "SQL", "HTML/CSS", "TypeScript", "Go"],
+    "ml_ai": ["Scikit-learn", "XGBoost", "TensorFlow", "OpenCV", "LangChain", "LangGraph", "OpenAI API", "LLM Agents", "Hugging Face"],
+    "web_development": ["React.js", "Next.js", "FastAPI", "Flask", "Django", "Firebase", "Tailwind CSS", "Node.js"],
+    "databases": ["PostgreSQL", "MongoDB", "Firebase", "MySQL"],
+    "devops_cloud": ["Docker", "Git", "AWS", "Heroku", "AWS EC2", "GitHub Actions"],
+    "iot_hardware": ["ESP32", "Arduino", "PCB Design", "Hardware Development", "IoT Systems", "Raspberry Pi"],
+    "soft_skills": ["Problem Solving", "Team Leadership", "Project Management", "Communication", "Learning Agility", "Innovation"]
+  },
+
+  "projects": [
+    {
+      "title": "Low-Cost Smart Chessboard with Cloud Integration",
+      "category": "IoT System",
+      "description": "Built an IoT-enabled chessboard using ESP32, multiplexers, and 64 reed switches with 98.2% move detection accuracy at 1/8th commercial cost. Features Firebase cloud logging, React dashboard, and Stockfish integration. Led a 3-member team through end-to-end development including PCB prototyping, firmware, and testing with 20+ users.",
+      "techStack": ["ESP32", "Python", "React.js", "Firebase", "Stockfish", "PCB Design", "IoT", "Cloud Integration", "Hardware Development"],
+      "date": "2025",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/anujjainbatu"
+        },
+        {
+          "name": "Demo Video",
+          "url": "#"
+        }
+      ],
+      "images": [
+        {
+          "src": "/placeholder.jpg",
+          "alt": "Smart Chessboard Hardware"
+        },
+        {
+          "src": "/placeholder.jpg",
+          "alt": "React Dashboard"
+        },
+        {
+          "src": "/placeholder.jpg",
+          "alt": "PCB Design"
+        }
+      ]
+    },
+    {
+      "title": "hideFlare: CDN Obfuscation Detection System",
+      "category": "Cybersecurity Tool",
+      "description": "Smart India Hackathon 2024 Finalist project for MP Police. Built a cybersecurity tool analyzing 2,000+ suspicious domains using a 6-layer detection system with DNS forensics, TLS fingerprinting, and ML (XGBoost) achieving 92% accuracy. Selected as one of the top 5 national teams out of 88,000+ participants.",
+      "techStack": ["Python", "Flask", "XGBoost", "Scikit-learn", "DNS Forensics", "TLS Fingerprinting", "Docker", "Cybersecurity"],
+      "date": "2025",
+      "status": "Completed",
+      "featured": true,
+      "achievements": ["Smart India Hackathon 2024 Finalist", "Top 5 national teams out of 88,000+ participants"],
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/anujjainbatu"
+        },
+        {
+          "name": "Project Details",
+          "url": "#"
+        }
+      ],
+      "images": [
+        {
+          "src": "/placeholder.jpg",
+          "alt": "hideFlare Dashboard"
+        },
+        {
+          "src": "/placeholder.jpg",
+          "alt": "Detection System"
+        },
+        {
+          "src": "/placeholder.jpg",
+          "alt": "Analysis Results"
+        }
+      ]
+    },
+    {
+      "title": "Book Genre Classification System",
+      "category": "Machine Learning",
+      "description": "Developed ML model to classify book genres from descriptions using TF-IDF + XGBoost achieving 88% F1 score. Engineered FastAPI backend with REST endpoints for genre prediction and recommendations. Containerized service using Docker and deployed on AWS EC2 with auto-restart scripts.",
+      "techStack": ["Python", "XGBoost", "TF-IDF", "FastAPI", "Docker", "AWS EC2", "Machine Learning", "REST API"],
+      "date": "2024",
+      "status": "Completed",
+      "featured": true,
+      "metrics": ["88% F1 Score"],
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/anujjainbatu"
+        }
+      ],
+      "images": [
+        {
+          "src": "/placeholder.jpg",
+          "alt": "Book Classification Interface"
+        },
+        {
+          "src": "/placeholder.jpg",
+          "alt": "ML Model Results"
+        }
+      ]
+    },
+    {
+      "title": "Python Automation Suite",
+      "category": "Automation",
+      "description": "Delivered 25+ Python automation solutions including web scraping, API bots, and data pipelines for global clients on Fiverr. Built GenAI-powered chatbots and autonomous agents using LangChain, LangGraph, and OpenAI APIs. Reduced manual work by 60% for clients.",
+      "techStack": ["Python", "LangChain", "LangGraph", "OpenAI API", "Web Scraping", "API Development", "Automation", "Chatbots"],
+      "date": "2023-Present",
+      "status": "Ongoing",
+      "featured": true,
+      "metrics": ["25+ Projects Delivered", "60% Manual Work Reduction"],
+      "links": [
+        {
+          "name": "Fiverr Profile",
+          "url": "https://www.fiverr.com"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/anujjainbatu"
+        }
+      ],
+      "images": [
+        {
+          "src": "/placeholder.jpg",
+          "alt": "Automation Dashboard"
+        },
+        {
+          "src": "/placeholder.jpg",
+          "alt": "Bot Interface"
+        }
+      ]
+    },
+    {
+      "title": "AI Portfolio Website",
+      "category": "Web Development",
+      "description": "Built a modern, responsive portfolio website with AI-powered chat integration using Next.js and React. Features include dynamic project showcases, interactive components, and seamless user experience with modern design patterns.",
+      "techStack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "AI Integration", "Responsive Design"],
+      "date": "2025",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "Live Site",
+          "url": "#"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/anujjainbatu"
+        }
+      ],
+      "images": [
+        {
+          "src": "/placeholder.jpg",
+          "alt": "Portfolio Homepage"
+        },
+        {
+          "src": "/placeholder.jpg",
+          "alt": "Project Section"
+        }
+      ]
+    }
+  ],
+
+  "social": {
+    "linkedin": "https://linkedin.com/in/anujjainbatu",
+    "github": "https://github.com/anujjainbatu",
+    "twitter": "https://x.com/anujainbatu",
+    "kaggle": "https://www.kaggle.com/anujjainbatu",
+    "leetcode": "https://leetcode.com/u/anujjainbatu/",
+    "fiverr": "https://www.fiverr.com"
+  },
+
+  "internship": {
+    "seeking": true,
+    "duration": "6 months",
+    "startDate": "September 2025",
+    "preferredLocation": "Remote or On-site",
+    "focusAreas": ["AI Development", "Full-stack Development", "IoT Systems", "Machine Learning"],
+    "availability": "Available for immediate start",
+    "workStyle": "Fast learner, team player, problem solver",
+    "goals": "Join an innovative team building AI-powered solutions. I want to contribute to meaningful projects while growing my skills in enterprise-level development."
+  },
+
+  "personality": {
+    "traits": ["passionate", "curious", "determined", "collaborative"],
+    "interests": ["AI/ML", "IoT", "Web Development", "Open Source", "Hackathons"],
+    "funFacts": [
+      "Smart India Hackathon finalist among 88,000+ teams",
+      "Built 25+ automation projects for global clients",
+      "Love solving complex problems with simple solutions"
+    ],
+    "workingStyle": "I move fast, learn faster, and love tackling challenging problems",
+    "motivation": "Building technology that makes a real impact on people's lives"
+  },
+
+  "resume": {
+    "title": "Anuj Jain - Resume",
+    "description": "Full-stack Python Developer & AI Engineer | B.Tech IoT Student | SIH 2025 Finalist",
+    "fileType": "PDF",
+    "lastUpdated": "January 2025",
+    "fileSize": "2.1 MB",
+    "downloadUrl": "/resume.pdf"
+  },
+
+  "chatbot": {
+    "name": "Anuj",
+    "personality": "casual, enthusiastic, tech-savvy",
+    "tone": "friendly and conversational",
+    "language": "english",
+    "responseStyle": "short and interactive",
+    "useEmojis": true,
+    "topics": ["projects", "skills", "experience", "internship", "contact", "fun_facts"]
+  },
+
+  "presetQuestions": {
+    "me": [
+      "Who are you?",
+      "Tell me about yourself",
+      "What's your background?",
+      "What are your passions?",
+      "How did you get started in tech?",
+      "Where do you see yourself in 5 years?"
+    ],
+    "professional": [
+      "What are your skills?",
+      "Can I see your resume?",
+      "What's your experience?",
+      "Are you looking for internships?",
+      "What makes you a valuable team member?",
+      "Where are you working now?",
+      "Why should I hire you?",
+      "What's your educational background?",
+      "How was your experience working as freelancer?"
+    ],
+    "projects": [
+      "What projects are you most proud of?",
+      "What are your projects?",
+      "Tell me about your best project",
+      "What are you working on?"
+    ],
+    "contact": [
+      "How can I reach you?",
+      "How can I contact you?",
+      "What's your email?",
+      "Where can I find you online?",
+      "What kind of project would make you say 'yes' immediately?",
+      "Where are you located?"
+    ],
+    "fun": [
+      "What are your hobbies?",
+      "Tell me something interesting about you",
+      "What motivates you?"
+    ]
+  },
+
+  "meta": {
+    "configVersion": "1.0",
+    "lastUpdated": "2025-01-13",
+    "generatedBy": "Anuj Jain",
+    "description": "Complete portfolio configuration for AI-powered portfolio website"
+  }
+}

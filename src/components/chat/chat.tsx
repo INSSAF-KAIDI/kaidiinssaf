@@ -12,6 +12,7 @@ import ChatLanding from '@/components/chat/chat-landing';
 import ChatMessageContent from '@/components/chat/chat-message-content';
 import { SimplifiedChatView } from '@/components/chat/simple-chat-view';
 import { PresetReply } from '@/components/chat/preset-reply';
+import { presetReplies } from '@/lib/config-loader';
 import {
   ChatBubble,
   ChatBubbleMessage,
