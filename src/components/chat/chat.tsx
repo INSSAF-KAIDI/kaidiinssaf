@@ -377,7 +377,7 @@ const Chat = () => {
                         <div className="bg-amber-100 dark:bg-amber-900/30 p-3 rounded-lg mt-3">
                           <p className="font-medium mb-2">What you can do:</p>
                           <ul className="list-disc list-inside space-y-1 text-xs">
-                            <li>Contact Anuj directly for a live demo</li>
+                            <li>Contact me directly for a live demo</li>
                             <li>Use the preset questions below for instant responses</li>
                             <li>Come back tomorrow when the quota resets</li>
                           </ul>
@@ -399,7 +399,7 @@ const Chat = () => {
                           }}
                           className="px-4 py-2 bg-amber-500 text-white text-sm rounded-md hover:bg-amber-600 transition-colors font-medium"
                         >
-                          Contact Anuj
+                          Contact me
                         </button>
                         <button
                           onClick={() => {
