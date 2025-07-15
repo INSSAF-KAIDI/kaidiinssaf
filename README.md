@@ -512,14 +512,6 @@ portfolio/
 
 Transform your career with a professional AI-powered portfolio that takes minutes to set up and zero code to maintain.
 
-### 🌟 Show Your Support
-
-If this project helped you, please consider:
-- ⭐ **Star this repo** on GitHub
-- 🐦 **Share on Twitter** with hashtag #AIPortfolio
-- 💬 **Join our discussions** for updates and support
-- 🤝 **Contribute** to make it even better
-
 [⭐ Star on GitHub](https://github.com/anujjainbatu/portfolio) | [🐛 Report Bug](https://github.com/anujjainbatu/portfolio/issues) | [💡 Request Feature](https://github.com/anujjainbatu/portfolio/issues) | [� Documentation](docs/) | [�💬 Discussions](https://github.com/anujjainbatu/portfolio/discussions)
 
 </div>
