@@ -121,13 +121,14 @@ const ProjectContent = ({ project }: { project: { title: string } }) => {
             {projectData.images.map((image, index) => (
               <div
                 key={index}
-                className="relative aspect-video overflow-hidden rounded-2xl"
+                className="relative overflow-hidden rounded-2xl"
               >
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  fill
-                  className="object-cover transition-transform"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto transition-transform"
                 />
               </div>
             ))}

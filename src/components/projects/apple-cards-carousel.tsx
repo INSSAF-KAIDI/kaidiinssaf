@@ -79,12 +79,12 @@ export const Carousel = ({
 
   // Get the card width and gap based on viewport size
   const getScrollDistance = () => {
-    // Card width (w-56 = 224px) + gap-4 (16px)
-    const cardWidth = 224;
+    // Card width (w-80 = 320px) + gap-4 (16px)
+    const cardWidth = 320;
     const gap = 16;
     const totalWidth = cardWidth + gap;
 
-    // Scroll by 2 cards on desktop, 1 on mobile
+    // Scroll by 1 card at a time
     const cardsToScroll = 1;
     return totalWidth * cardsToScroll;
   };
@@ -109,7 +109,7 @@ export const Carousel = ({
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
-      const cardWidth = 224; // w-56 (224px)
+      const cardWidth = 320; // w-80 (320px)
       const gap = isMobile() ? 16 : 16; // gap-4 (16px)
       const scrollPosition = (cardWidth + gap) * index;
       carouselRef.current.scrollTo({
@@ -289,7 +289,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
+        className="relative z-10 flex h-48 w-80 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
       >
         <div className="absolute inset-x-0 top-0 z-30 h-full cursor-pointer bg-gradient-to-b from-black hover:scale-110 via-transparent to-transparent" />
         {/*<div className="absolute inset-0 z-20 cursor-pointer bg-black/20 hover:bg-black/2" />*/}
