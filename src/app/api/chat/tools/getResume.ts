@@ -1,59 +1,49 @@
 import { tool } from 'ai';
 import { z } from 'zod';
+import { getConfig } from '@/lib/config-loader';
 
 export const getResume = tool({
   description:
-    'This tool shows Anuj Jain\'s resume information.',
+    'This tool provides comprehensive resume information including professional experience, education, and achievements.',
   parameters: z.object({}),
   execute: async () => {
+    const config = getConfig();
+    
     return {
       personalInfo: {
-        name: "Anuj Jain",
-        email: "anujjainbatu@gmail.com",
-        phone: "+91 8305117236",
+        name: config.personal.name,
+        email: config.personal.email,
+        location: config.personal.location,
+        title: config.personal.title,
         profiles: {
-          github: "https://github.com/anujjainbatu",
-          linkedin: "https://linkedin.com/in/anujjainbatu",
-          twitter: "https://x.com/anujainbatu",
-          kaggle: "https://www.kaggle.com/anujjainbatu",
-          leetcode: "https://leetcode.com/u/anujjainbatu/"
+          github: config.social.github,
+          linkedin: config.social.linkedin,
+          twitter: config.social.twitter,
+          kaggle: config.social.kaggle,
+          leetcode: config.social.leetcode
         }
       },
-      summary: "Full-stack Python developer & AI engineer with a flair for building end-to-end smart systems — from IoT devices to LLM-powered apps. 2025 SIH finalist and active freelancer with 25+ delivered automation projects.",
-      education: [
-        {
-          institution: "Samrat Ashok Technological Institute",
-          degree: "B.Tech in Internet of Things",
-          graduationDate: "June 2026",
-          gpa: "8.34 / 10.0"
-        },
-        {
-          institution: "Board of Secondary Education, MP",
-          degree: "Class XII (Science Stream)",
-          graduationDate: "March 2021",
-          marks: "96.4%"
-        }
-      ],
-      experience: [
-        {
-          company: "MookMati (AI-Powered Book Startup)",
-          position: "Machine Learning Intern",
-          duration: "July 2024",
-          highlights: ["Developed ML model to classify book genres (88% F1)", "Engineered FastAPI backend with REST endpoints", "Containerized service using Docker and deployed on AWS EC2"]
-        },
-        {
-          company: "Fiverr",
-          position: "Freelance Python & AI Agent Developer",
-          duration: "Aug 2023 – Present",
-          highlights: ["Delivered 25+ Python automation solutions", "Built GenAI-powered chatbots using LangChain", "Developed LLM-backed APIs using FastAPI + Docker"]
-        }
-      ],
-      achievements: [
-        "2nd position among 88,221 teams in Smart India Hackathon 2025",
-        "HDFC Badhte Kadam Scholarship recipient (2023 & 2024)",
-        "3rd position in Robo Race at Satyarth Techfest 2023"
-      ],
-      message: "Here's my resume! Want to know more about any specific experience or project?"
+      summary: config.personal.bio,
+      education: {
+        current: config.education.current,
+        achievements: config.education.achievements
+      },
+      experience: config.experience.map(exp => ({
+        company: exp.company,
+        position: exp.position,
+        duration: exp.duration,
+        type: exp.type,
+        description: exp.description,
+        technologies: exp.technologies
+      })),
+      skills: config.skills,
+      resume: {
+        title: config.resume.title,
+        description: config.resume.description,
+        lastUpdated: config.resume.lastUpdated,
+        downloadUrl: config.resume.downloadUrl
+      },
+      message: "I'm pleased to share my professional background with you. As you can see from my resume, I've maintained a strong focus on combining academic excellence with practical experience. Throughout my journey, I've consistently sought opportunities to apply what I learn in the classroom to real-world projects and challenges. My academic performance, combined with my hands-on experience through internships and freelance work, has given me a solid foundation in both theoretical concepts and practical implementation. I believe this combination of academic rigor and real-world application has prepared me well for contributing to your organization. Is there any particular aspect of my background you'd like me to expand on?"
     };
   },
 });

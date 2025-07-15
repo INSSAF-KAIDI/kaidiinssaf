@@ -1,65 +1,62 @@
 import { tool } from 'ai';
 import { z } from 'zod';
+import { getConfig } from '@/lib/config-loader';
 
 export const getInternship = tool({
-  description: 'Get information about my internship preferences, availability, and what I am looking for in a role',
+  description: 'Provides comprehensive information about internship opportunities, career preferences, and professional availability for recruiters and HR professionals.',
   parameters: z.object({}),
   execute: async () => {
+    const config = getConfig();
+    
     return {
-      availability: "Available for full-time roles starting immediately",
+      availability: config.internship.availability,
       preferences: {
-        roleTypes: [
-          "Full-Stack Developer",
-          "Python Developer", 
-          "Machine Learning Engineer",
-          "AI Engineer",
-          "IoT Developer",
-          "Backend Developer"
-        ],
-        industries: [
-          "Technology/Software",
-          "AI/Machine Learning",
-          "IoT/Hardware",
-          "Fintech",
-          "Healthcare Tech",
-          "Cybersecurity"
-        ],
-        workMode: "Open to remote, hybrid, or on-site positions",
-        location: "Based in India, open to relocation for the right opportunity"
+        roleTypes: config.internship.focusAreas,
+        workMode: config.internship.preferredLocation,
+        location: config.personal.location,
+        startDate: config.internship.startDate,
+        duration: config.internship.duration
       },
       experience: {
-        internshipCompleted: "Machine Learning Intern at MookMati (July 2024)",
-        freelanceWork: "Active freelancer on Fiverr with 25+ completed projects",
+        internshipCompleted: config.experience.find(exp => exp.type === "Internship")?.company 
+          ? `${config.experience.find(exp => exp.type === "Internship")?.position} at ${config.experience.find(exp => exp.type === "Internship")?.company} (${config.experience.find(exp => exp.type === "Internship")?.duration})`
+          : "No formal internship completed yet",
+        freelanceWork: config.experience.find(exp => exp.type === "Freelance")?.description || "Active freelancer",
         projectExperience: "Led multiple end-to-end projects including IoT systems and ML models"
       },
       skills: {
         technical: [
-          "Python", "JavaScript", "SQL", "Machine Learning", "FastAPI", "React.js",
-          "IoT Development", "Cloud Platforms (AWS, Firebase)", "Docker", "Git"
+          ...config.skills.programming,
+          ...config.skills.ml_ai,
+          ...config.skills.web_development,
+          ...config.skills.databases,
+          ...config.skills.devops_cloud,
+          ...config.skills.iot_hardware
         ],
         soft: [
           "Team Leadership", "Project Management", "Problem Solving", 
           "Communication", "Adaptability", "Innovation"
         ]
       },
-      achievements: [
-        "2nd position in Smart India Hackathon 2025 (out of 88,221 teams)",
-        "HDFC Badhte Kadam Scholarship recipient (2023 & 2024)",
-        "3rd position in Robo Race at Satyarth Techfest 2023"
-      ],
+      achievements: config.education.achievements || [],
       lookingFor: {
-        growthOpportunities: "Roles that offer learning and advancement opportunities",
-        mentorship: "Teams with experienced developers who can provide guidance",
-        impactfulWork: "Projects that solve real-world problems and make a difference",
-        technicalChallenges: "Opportunities to work on cutting-edge technologies",
-        collaboration: "Collaborative environments with diverse, talented teams"
+        goals: config.internship.goals,
+        workStyle: config.internship.workStyle,
+        motivation: config.personality.motivation,
+        interests: config.personality.interests
       },
       contact: {
-        email: "anujjainbatu@gmail.com",
-        linkedin: "https://linkedin.com/in/anujjainbatu",
-        github: "https://github.com/anujjainbatu",
+        email: config.personal.email,
+        linkedin: config.social.linkedin,
+        github: config.social.github,
         portfolio: "This AI-powered portfolio showcases my projects and skills"
-      }
+      },
+      personality: {
+        traits: config.personality.traits,
+        funFacts: config.personality.funFacts,
+        workingStyle: config.personality.workingStyle
+      },
+      professionalMessage: "I'm actively seeking internship and full-time opportunities where I can contribute my technical skills while continuing to grow professionally. I'm particularly excited about roles that offer hands-on experience with cutting-edge technologies and the chance to work on impactful projects. What I'm looking for is an environment where I can combine technical challenges with collaborative teamwork - somewhere I can contribute meaningfully while learning from experienced professionals like yourself. I'm very adaptable and eager to take on new challenges, and I believe my technical background combined with my enthusiasm for learning would make me a valuable addition to your team. What kind of projects or challenges is your team currently working on that I might be able to contribute to?"
     };
   },
 });

@@ -1,32 +1,28 @@
 
 import { tool } from "ai";
 import { z } from "zod";
+import { getConfig } from "@/lib/config-loader";
 
 export const getProjects = tool({
   description:
-    "This tool will show a list of all projects made by Anuj Jain",
+    "This tool showcases a comprehensive project portfolio, highlighting technical achievements and real-world impact.",
   parameters: z.object({}),
   execute: async () => {
+    const config = getConfig();
+    
     return {
-      projects: [
-        {
-          title: "Low-Cost Smart Chessboard with Cloud Integration",
-          type: "IoT Hardware/Software System",
-          date: "May 2025",
-          description: "Built an IoT-enabled chessboard using ESP32, multiplexers, and 64 reed switches with 98.2% move detection accuracy at 1/8th commercial cost. Implemented Firebase cloud logging, a React dashboard, and Stockfish integration. Led a 3-member team through end-to-end development (PCB prototyping, firmware, testing with 20+ users); optimized chess logic in Python and sensor polling, reducing power consumption by 40%.",
-          techStack: ["ESP32", "Python", "React", "Firebase", "Stockfish", "IoT"],
-          highlights: ["98.2% accuracy", "1/8th commercial cost", "40% power optimization"]
-        },
-        {
-          title: "hideFlare: CDN Obfuscation Detection System",
-          type: "Smart India Hackathon 2024 Finalist (MP Police)",
-          date: "January 2025",
-          description: "Selected as one of the top 5 national teams (out of 88,000+) to build a cybersecurity tool for MP Police. Analyzed 2,000+ suspicious domains using a 6-layer detection system with DNS forensics, TLS fingerprinting, and ML (XGBoost) — achieving 92% accuracy. Developed a Flask + Scikit-learn backend processing 50+ features (ASN, WHOIS, HTTP headers); deployed via Docker in cyber labs.",
-          techStack: ["Python", "Flask", "Scikit-learn", "XGBoost", "Docker", "DNS Forensics", "TLS"],
-          highlights: ["92% accuracy", "Top 5 national team", "37% false positive reduction"]
-        }
-      ],
-      summary: "Here are my major projects! I love building end-to-end solutions that combine IoT, AI, and automation. Want to know more about any specific project or see my other work?"
+      projects: config.projects.map(project => ({
+        title: project.title,
+        type: project.category,
+        date: project.date,
+        description: project.description,
+        techStack: project.techStack,
+        status: project.status,
+        featured: project.featured,
+        links: project.links,
+        highlights: project.achievements || project.metrics || []
+      })),
+      summary: "I'm excited to share my project portfolio with you. These projects represent my journey as a developer and demonstrate my ability to take ideas from conception to deployment. Each project has taught me something different - from technical implementation to project management and problem-solving. I've worked across various technology stacks and domains, which has given me a broad perspective on software development. What I'm most proud of is how these projects have allowed me to solve real-world problems while continuously learning and growing as a developer. I'd be happy to dive deeper into any specific project that interests you or discuss how the experience from these projects would apply to roles at your organization."
     };
   },
 });
