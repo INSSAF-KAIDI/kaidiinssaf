@@ -30,23 +30,32 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Anuj",
-      url: "https://anujjainbatu.github.io",
+      url: "http://portfolio.anujjainbatu.tech/",
     },
   ],
   creator: "Anuj",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://anujjainbatu.github.io",
+    url: "http://portfolio.anujjainbatu.tech/",
     title: "Anuj Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
     siteName: "Anuj Portfolio",
+    images: [
+      {
+        url: "/portfolio.png",
+        width: 1200,
+        height: 630,
+        alt: "Anuj Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Anuj Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
     creator: "@anujjainbatu",
+    images: ["/portfolio.png"],
   },
   icons: {
     icon: [
