@@ -63,13 +63,13 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
           <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
             <img
               src="/profile.jpeg"
-              alt="Anuj's avatar"
+              alt="Inssaf's avatar"
               className="h-full w-full object-cover object-[center_top_-5%] scale-95"
             />
           </div>
           <div>
             <h2 className="text-foreground text-2xl font-semibold">
-              Anuj Jain
+              Inssaf KAIDI
             </h2>
             <p className="text-muted-foreground text-sm">
               Available for Opportunities

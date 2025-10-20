@@ -1,6 +1,6 @@
 # 🚀 AI-Powered Portfolio – Effortless, Customizable, Professional
 
-**Create a powerful, modern developer portfolio in minutes — fully customizable through a single JSON file and enhanced by AI.**  
+**Create a powerful, modern developer portfolio in minutes — y customizable through a single JSON file and enhanced by AI.**  
 No coding knowledge required. Just configure, deploy, and showcase your best self.
 
 ![Portfolio Preview](https://raw.githubusercontent.com/anujjainbatu/ai-portfolio-system-landing-page/refs/heads/main/assets/portfolio.png)
@@ -131,7 +131,7 @@ portfolio/
 
 ## 🧠 AI Chatbot Configuration
 
-- Fully customizable AI chat, driven by your JSON config.
+- y customizable AI chat, driven by your JSON config.
 - Features:
   - Preset questions & responses
   - Dynamic AI replies (Google Gemini API)
@@ -201,7 +201,7 @@ Example config:
 
 ## 📚 Documentation
 
-Full guides in [`docs/`](docs/):
+ guides in [`docs/`](docs/):
 
 - [Contributing](docs/CONTRIBUTING.md)
 - [License](docs/LICENSE)

@@ -14,12 +14,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Anuj Jain - Full-stack Python Developer & AI Engineer | Professional Portfolio",
-    template: "%s | Anuj Jain Portfolio"
+    default: "Inssaf KAIDI - EdTech Developer & AI Engineer | Professional Portfolio",
+    template: "%s | Inssaf KAIDI Portfolio"
   },
-  description: "Professional portfolio of Anuj Jain - Full-stack Python Developer & AI Engineer. SIH 2025 Finalist showcasing 25+ automation projects, IoT systems, and AI-powered solutions. Available for internships.",
+  description: "Professional portfolio of Inssaf KAIDI - Full-stack Python Developer & AI Engineer. SIH 2025 Finalist showcasing 25+ automation projects, IoT systems, and AI-powered solutions. Available for internships.",
   keywords: [
-    "Anuj Jain",
+    "Inssaf KAIDI",
     "Full-stack Developer", 
     "Python Developer",
     "AI Engineer",
@@ -47,12 +47,12 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Anuj Jain",
-      url: "https://portfolio.anujjainbatu.tech/",
+      name: "Inssaf KAIDI",
+      url: "https://portfolio.inssafkaidi.tech/",
     },
   ],
-  creator: "Anuj Jain",
-  publisher: "Anuj Jain",
+  creator: "Inssaf KAIDI",
+  publisher: "Inssaf KAIDI",
   robots: {
     index: true,
     follow: true,
@@ -67,29 +67,29 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio.anujjainbatu.tech/",
-    title: "Anuj Jain - Full-stack Python Developer & AI Engineer | Professional Portfolio",
+    url: "https://portfolio.kaidiinssaf.tech/",
+    title: "Inssaf KAIDI - EdTech Developer & AI Engineer | Professional Portfolio",
     description: "Professional portfolio showcasing AI-powered projects, IoT systems, and full-stack development. SIH 2025 Finalist with 25+ automation projects. Available for internships.",
-    siteName: "Anuj Jain Portfolio",
+    siteName: "Inssaf KAIDI Portfolio",
     images: [
       {
-        url: "https://portfolio.anujjainbatu.tech/portfolio.png",
+        url: "https://portfolio.kaidiinssaf.tech/portfolio.png",
         width: 1200,
         height: 630,
-        alt: "Anuj Jain - Professional Portfolio with AI Chatbot",
+        alt: "Inssaf KAIDI - Professional Portfolio with AI Chatbot",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anuj Jain - Full-stack Python Developer & AI Engineer",
+    title: "Inssaf KAIDI - EdTech Developer & AI Engineer",
     description: "Professional portfolio showcasing AI projects, IoT systems, and automation solutions. SIH 2025 Finalist available for internships.",
-    creator: "@anujainbatu",
-    site: "@anujainbatu",
+    creator: "@inssafkaidi",
+    site: "@inssafkaidi",
     images: [{
-      url: "https://portfolio.anujjainbatu.tech/portfolio.png",
-      alt: "Anuj Jain Professional Portfolio"
+      url: "https://portfolio.inssafkaidi.tech/portfolio.png",
+      alt: "Inssaf KAIDI Professional Portfolio"
     }],
   },
   icons: {
@@ -104,7 +104,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   alternates: {
-    canonical: "https://portfolio.anujjainbatu.tech/",
+    canonical: "https://portfolio.inssafkaidi.tech/",
   },
   category: "technology",
   classification: "Portfolio Website",
@@ -123,21 +123,21 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="canonical" href="https://portfolio.anujjainbatu.tech/" />
+        <link rel="canonical" href="https://portfolio.inssafkaidi.tech/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Anuj Jain",
-              "jobTitle": "Full-stack Python Developer & AI Engineer",
-              "url": "https://portfolio.anujjainbatu.tech/",
-              "image": "https://portfolio.anujjainbatu.tech/profile.jpeg",
+              "name": "Inssaf KAIDI",
+              "jobTitle": "EdTech Developer & AI Engineer",
+              "url": "https://portfolio.inssafkaidi.tech/",
+              "image": "https://portfolio.inssafkaidi.tech/profile.jpeg",
               "sameAs": [
-                "https://github.com/anujjainbatu",
-                "https://linkedin.com/in/anujjainbatu",
-                "https://x.com/anujainbatu"
+                "https://github.com/inssafkaidi",
+                "https://www.linkedin.com/in/inssafkaidi/",
+                "https://x.com/inssafkaidi"
               ],
               "worksFor": {
                 "@type": "Organization",

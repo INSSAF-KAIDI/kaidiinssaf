@@ -1,30 +1,30 @@
 {
   "personal": {
-    "name": "Anuj Jain",
+    "name": "Inssaf KAIDI",
     "age": 22,
-    "location": "Vidisha, Madhya Pradesh, India",
-    "title": "Full-stack Python Developer & AI Engineer",
-    "email": "anujjainbatu@gmail.com",
-    "phone": "+91 8305117236",
-    "handle": "@anujjainbatu",
-    "bio": "Hey 👋\nI'm Anuj, a passionate Full-stack Python developer and AI engineer with experience across ML, Generative AI, and IoT. Amazon ML Summer School trainee, SIH 2025 finalist, and active freelancer with 25+ delivered automation projects. I love building end-to-end smart systems — from IoT devices to LLM-powered applications.",
+    "location": "Casablanca, Morocco",
+    "title": "MSc Student in EdTech & Digital Transformation Focused on AI, Skills Engineering & Process Optimization",
+    "email": "kaidiinssaf@gmail.com",
+    "phone": "+212 642984053",
+    "handle": "@Inssafkaidi",
+    "bio": "Hey 👋\nI'm Inssaf, a passionate MSc Student in EdTech & Digital Transformation Focused on AI, Skills Engineering & Process Optimization.",
     "avatar": "/profile.jpeg",
     "fallbackAvatar": "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3"
   },
   "education": {
     "current": {
-      "degree": "B.Tech in Internet of Things",
-      "institution": "Samrat Ashok Technological Institute (SATI)",
-      "duration": "2022-2026",
-      "cgpa": "7.85/10.0",
+       "degree": "Master",
+      "institution": "ENSET Mohammedia",
+      "duration": "2024–2026",
+      "cgpa": "",
       "graduationDate": "June 2026"
     },
     "previous": {
-      "degree": "Higher Secondary Certificate (Science Stream)",
-      "institution": "Board of Secondary Education, MP",
-      "duration": "2021",
-      "percentage": "96.4%",
-      "completionDate": "March 2021"
+      "degree": "LST — FST Settat",
+      "institution": "FST Settat",
+      "duration": "2023–2024",
+      "percentage": "",
+      "completionDate": "July 2024"
     },
     "achievements": [
       "Smart India Hackathon 2025 Finalist (2nd among 88,221 teams)",
@@ -349,15 +349,15 @@
     "motivation": "Building technology that makes a real impact on people's lives through AI and automation"
   },
   "resume": {
-    "title": "Anuj Jain - Resume",
-    "description": "Full-stack Python Developer & AI Engineer | Amazon ML Summer School Trainee | SIH 2025 Finalist",
+    "title": "Inssaf KAIDI - Resume",
+    "description": "MSc Student in EdTech & Digital Transformation Focused on AI, Skills Engineering & Process Optimization",
     "fileType": "PDF",
-    "lastUpdated": "September 2025",
-    "fileSize": "2.1 MB",
-    "downloadUrl": "https://anujjainbatu.github.io/anujjainbatu/resume_show_16092025.pdf"
+    "lastUpdated": "October 2025",
+    "fileSize": "182 Ko",
+    "downloadUrl": "https://inssaf-kaidi.github.io/My-Resume/CV_Inssaf.pdf"
   },
   "chatbot": {
-    "name": "Anuj",
+    "name": "Inssaf",
     "personality": "casual, enthusiastic, tech-savvy",
     "tone": "friendly and conversational",
     "language": "english",
@@ -417,8 +417,8 @@
   },
   "meta": {
     "configVersion": "2.0",
-    "lastUpdated": "2025-09-15",
-    "generatedBy": "Anuj Jain",
+    "lastUpdated": "2025-10-05",
+    "generatedBy": "Inssaf KAIDI",
     "description": "Updated portfolio configuration with latest resume information including Amazon ML Summer School, updated projects, and enhanced certifications"
   }
 }

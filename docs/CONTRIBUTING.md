@@ -28,7 +28,7 @@ Examples of behavior that contributes to creating a positive environment include
 
 - Using welcoming and inclusive language
 - Being respectful of differing viewpoints and experiences
-- Gracefully accepting constructive criticism
+- Gracey accepting constructive criticism
 - Focusing on what is best for the community
 - Showing empathy towards other community members
 
@@ -51,7 +51,7 @@ Examples of behavior that contributes to creating a positive environment include
    ```
 3. **Add the original repository** as upstream:
    ```bash
-   git remote add upstream https://github.com/anujjainbatu/portfolio.git
+   git remote add upstream https://github.com/INSSAF-KAIDI/portfolio.git
    ```
 4. **Install dependencies**:
    ```bash
@@ -323,9 +323,9 @@ We use [Semantic Versioning](https://semver.org/):
 
 ### Getting Help
 
-- 💬 [GitHub Discussions](https://github.com/anujjainbatu/portfolio/discussions)
-- 🐛 [Issues](https://github.com/anujjainbatu/portfolio/issues)
-- 📧 Email: anujjainbatu@gmail.com
+- 💬 [GitHub Discussions](https://github.com/INSSAF-KAIDI/portfolio/discussions)
+- 🐛 [Issues](https://github.com/INSSAF-KAIDI/portfolio/issues)
+- 📧 Email: kaidiinssaf@gmail.com
 
 ### Recognition
 
@@ -336,7 +336,7 @@ Contributors will be:
 
 ### Code of Conduct Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at anujjainbatu@gmail.com.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at kaidiinssaf@gmail.com.
 
 ---
 
