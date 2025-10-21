@@ -66,7 +66,7 @@ export async function POST(req: Request) {
     // Transform to normalize error parts so the client parser always receives string errors
     const normalizeErrorTransform = ({ tools, stopStream }: { tools: any; stopStream: () => void; }) => {
       return new TransformStream({
-        transform(chunk: any, controller) { // <<< La version originale sans le type explicite
+        transform(chunk: any, controller: TransformStreamDefaultController) { { // <<< La version originale sans le type explicite
           try {
             if (chunk && typeof chunk === 'object' && chunk.type === 'error') {
               const copy = { ...chunk };
