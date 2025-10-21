@@ -85,8 +85,8 @@ export async function POST(req: Request) {
             controller.enqueue(chunk);
           }
         }
-      } as any);
-    };
+      });
+    };    
 
     const result = streamText({
       model: google('gemini-1.5-flash'),
