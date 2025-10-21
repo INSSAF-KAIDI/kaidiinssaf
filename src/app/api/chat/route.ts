@@ -1,6 +1,7 @@
+/// <reference lib="dom" />
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { streamText, tool } from 'ai';
-import { formatDataStreamPart } from '@ai-sdk/ui-utils';
+import { formatDataStreamPart } from '@ai-sdk/ui-utils'; // Assurez-vous que ce paquet est bien installé
 import { z } from 'zod';
 
 import { SYSTEM_PROMPT } from './prompt';
@@ -18,18 +19,17 @@ const google = createGoogleGenerativeAI({
   apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
 });
 
-// ❌ Pas besoin de l'export ici, Next.js n'aime pas ça
-function errorHandler(error: unknown) {
-  if (error == null) {
-    return 'Unknown error';
+// Helper for error handling (optional, but good practice)
+function safeStringify(error: unknown): string {
+  try {
+    if (error == null) return 'Unknown error';
+    if (typeof error === 'string') return error;
+    if (error instanceof Error) return error.message;
+    return JSON.stringify(error);
+  } catch (e) {
+    // Fallback if JSON.stringify fails (e.g., circular structures)
+    return String(error);
   }
-  if (typeof error === 'string') {
-    return error;
-  }
-  if (error instanceof Error) {
-    return error.message;
-  }
-  return JSON.stringify(error);
 }
 
 export async function POST(req: Request) {
@@ -60,33 +60,40 @@ export async function POST(req: Request) {
 
     console.log('[CHAT-API] About to call streamText');
 
-    // streamText returns a stream result object; do not `await` it or consume it
-    // — we must return the stream Response directly to the client so the
-    // client-side `@ai-sdk/react` parser can consume it.
     // Transform to normalize error parts so the client parser always receives string errors
     const normalizeErrorTransform = ({ tools, stopStream }: { tools: any; stopStream: () => void; }) => {
-      return new TransformStream({
-        transform(chunk: any, controller: TransformStreamDefaultController) { { // <<< La version originale sans le type explicite
+      // Define the transformer object separately with explicit types
+      const transformer: Transformer<any, any> = {
+        transform(chunk: any, controller: TransformStreamDefaultController) {
           try {
             if (chunk && typeof chunk === 'object' && chunk.type === 'error') {
+              // Create a mutable copy to modify the error property
               const copy = { ...chunk };
-              if (typeof copy.error !== 'string') {
-                try {
-                  copy.error = typeof copy.error === 'undefined' ? 'Unknown error' : JSON.stringify(copy.error);
-                } catch (e) {
-                  copy.error = String(copy.error);
-                }
-              }
+              // Ensure the error property is always a string
+              copy.error = safeStringify(copy.error);
               controller.enqueue(copy);
             } else {
               controller.enqueue(chunk);
             }
           } catch (e) {
-            controller.enqueue(chunk);
+            // Log the error and try to enqueue the original chunk if possible
+            console.error("Error during stream transformation:", e);
+            try {
+              // Try to send the original chunk even if processing failed
+              controller.enqueue(chunk);
+            } catch (enqueueError) {
+              console.error("Error enqueuing chunk after catch:", enqueueError);
+              // If enqueuing the original chunk also fails, maybe terminate or send a generic error chunk
+              // controller.enqueue({ type: 'error', error: 'Internal stream processing error' });
+              // controller.terminate(); // Consider terminating if critical
+            }
           }
         }
-      });
-    };    
+        // No start or flush needed for this specific transformer
+      };
+      // Pass the transformer object to the constructor
+      return new TransformStream(transformer);
+    };
 
     const result = streamText({
       model: google('gemini-1.5-flash'),
@@ -98,35 +105,40 @@ export async function POST(req: Request) {
     console.log('[CHAT-API] streamText completed successfully');
     console.log('[CHAT-API] Result object keys:', Object.keys(result));
 
-    // Prefer returning the SDK-provided UI message stream response so the
-    // client (`@ai-sdk/react`) can parse the `data` protocol correctly.
+    // Prefer returning the SDK-provided UI message stream response
     if (typeof (result as any).toUIMessageStreamResponse === 'function') {
       console.log('[CHAT-API] Returning toUIMessageStreamResponse');
       return (result as any).toUIMessageStreamResponse();
     }
 
+    // Fallback for non-UI stream (less likely needed with current Vercel AI SDK)
     if (typeof (result as any).toTextStreamResponse === 'function') {
       console.log('[CHAT-API] Returning toTextStreamResponse');
       return (result as any).toTextStreamResponse();
     }
 
-    // Fallback: buffer and return full text
+    // Fallback: buffer and return full text (should ideally not be reached)
+    console.warn('[CHAT-API] Fallback: Buffering full text response.');
     const text = await (result as any).text;
     return new Response(text, { status: 200 });
-  } catch (error) {
-    console.error('Chat API error:', error);
-    console.error('Error details:', error instanceof Error ? error.message : 'Unknown error');
-    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
 
-    // Handle specific error types
-    if (error instanceof Error && error.message?.includes('quota')) {
+  } catch (error) {
+    // Log detailed error information
+    console.error('[CHAT-API] Unhandled Error in POST:', error);
+    const errorMessage = safeStringify(error);
+    const errorStack = error instanceof Error ? error.stack : 'No stack trace available';
+    console.error('[CHAT-API] Error details:', errorMessage);
+    console.error('[CHAT-API] Error stack:', errorStack);
+
+    // Handle specific error types for client response
+    if (errorMessage.includes('quota')) {
       return new Response('API quota exceeded. Please try again later.', { status: 429 });
     }
-
-    if (error instanceof Error && error.message?.includes('network')) {
+    if (errorMessage.includes('network')) {
       return new Response('Network error. Please check your connection and try again.', { status: 503 });
     }
 
-    return new Response(`Internal Server Error: ${error instanceof Error ? error.message : 'Unknown error'}`, { status: 500 });
+    // Generic internal server error
+    return new Response(`Internal Server Error: ${errorMessage}`, { status: 500 });
   }
 }
