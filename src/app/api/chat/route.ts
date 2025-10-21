@@ -36,13 +36,13 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
     console.log('[CHAT-API] Incoming messages:', messages);
-    
+
     // Check if API key is available
     if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
       console.error('[CHAT-API] Missing GOOGLE_GENERATIVE_AI_API_KEY environment variable');
       return new Response('Missing API key', { status: 500 });
     }
-    
+
     console.log('[CHAT-API] API key available:', process.env.GOOGLE_GENERATIVE_AI_API_KEY?.slice(0, 10) + '...');
 
     // Add system prompt
@@ -66,7 +66,7 @@ export async function POST(req: Request) {
     // Transform to normalize error parts so the client parser always receives string errors
     const normalizeErrorTransform = ({ tools, stopStream }: { tools: any; stopStream: () => void; }) => {
       return new TransformStream({
-        transform(chunk: any, controller) {
+        transform(chunk: any, controller) { // <<< La version originale sans le type explicite
           try {
             if (chunk && typeof chunk === 'object' && chunk.type === 'error') {
               const copy = { ...chunk };
@@ -117,18 +117,16 @@ export async function POST(req: Request) {
     console.error('Chat API error:', error);
     console.error('Error details:', error instanceof Error ? error.message : 'Unknown error');
     console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
-    
+
     // Handle specific error types
     if (error instanceof Error && error.message?.includes('quota')) {
       return new Response('API quota exceeded. Please try again later.', { status: 429 });
     }
-    
+
     if (error instanceof Error && error.message?.includes('network')) {
       return new Response('Network error. Please check your connection and try again.', { status: 503 });
     }
-    
+
     return new Response(`Internal Server Error: ${error instanceof Error ? error.message : 'Unknown error'}`, { status: 500 });
   }
 }
-
-
