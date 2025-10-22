@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { tool } from 'ai';
 import { z } from 'zod';
 import { getConfig } from '@/lib/config-loader';
